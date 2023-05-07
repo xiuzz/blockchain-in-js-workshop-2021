@@ -2,15 +2,17 @@
 
 ## 小组成员
 
-- 2021xxxx-姓名 （组长）
-- 2021xxxx-姓名
-- 2021xxxx-姓名
-- 2021xxxx-姓名
+- 2021131068-曾榆高 （组长）
+- 2021131055-张宜斌
+- 2021131081-许晨彬
+- 2021131067-冉乔
+- 2021131058-马洋
+- 2021131057-马的爽
 
 
 ## 代码仓库链接
 
-https://github.com/caosbad/blockchain-in-js-workshop-2021(示例用，请根据自身的仓库替换)
+https://github.com/xiuzz/blockchain-in-js-workshop-2021
 
 
 
@@ -19,7 +21,7 @@ https://github.com/caosbad/blockchain-in-js-workshop-2021(示例用，请根据�
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/d30b8059f340362c74700bb9f8a1319c6f8cf63c#diff-790164bb6d107a3c138e494d5b9634a9fe09a7d129317f5487c9198d2eae8275
 
 
 ### 代码截图
@@ -27,7 +29,7 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d8
 > 将截图上传至网盘，放入链接即可
 
 ![](链接)
-
+ https://pan.baidu.com/s/1DLYgBvOKGhANFfmmntrQyg?pwd=456v 
 
 ### 主观与讨论题内容
 
