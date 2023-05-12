@@ -7,7 +7,7 @@ export const calcNonce = (block) => {
   const start = new Date().getTime()
   let calcTimes = 0
   while (!block.isValid()) {
-    block.setNonce(sha256(new Date().getTime().toString()).toString())
+    block.setNonce(sha256(((new Date().getTime()+Math.random()).toString())).toString())
     calcTimes++
   }
   const end = new Date().getTime()
