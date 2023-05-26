@@ -1,3 +1,6 @@
 export default class UTXO {
-  constructor() {}
+  constructor(owner,amount) {
+    this.owner=owner
+    this.amount=amount
+  }
 }

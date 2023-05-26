@@ -4,7 +4,7 @@ export const DIFFICULTY = 3
 
 class Block {  
   // 1. 完成构造函数及其参数
-  constructor(blockchain,preHash,height,hash) {
+  constructor(blockchain,preHash,height,hash,miner) {
     //链信息
     this.blockchain=blockchain;
     //父hash
@@ -15,6 +15,10 @@ class Block {
     this.hash=hash;
     //nonce 
     this.nonce='0';
+    //创块者
+    this.coinbaseBeneficiary=miner
+    //utxo_pool
+    this.utxoPool=null
   }
   isValid() {
     let cnt=0;
