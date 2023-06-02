@@ -7,14 +7,14 @@ class UTXOPool {
   /**
    * 将交易的信息更新至 UTXOPool 中
    */
-  addUTXO(owner) {
+  addUTXO(owner,amount) {
     if(owner in this.utxos){
-      this.utxos[owner].amount+=12.5
+      this.utxos[owner].amount+=amount
     }
     else{
       this.utxos[owner]=new UTXO(
         owner,
-        12.5
+        amount
       )
     }
   }  
@@ -27,14 +27,21 @@ class UTXOPool {
   }
   
   // 处理交易函数
-  handleTransaction() {}
+  handleTransaction(trx) {
+    if(this.isValidTransaction(trx.outputer,trx.outputAmount)){
+      this.addUTXO(trx.outputer,-trx.outputAmount)
+      this.addUTXO(trx.inputer,trx.outputAmount)
+    }
+  }
 
   // 验证交易合法性
   /**
    * 验证余额
    * 返回 bool 
    */
-  isValidTransaction() {}
+  isValidTransaction(owner,amount) {
+    return this.utxos[owner].amount>amount
+  }
 }
 
 export default UTXOPool

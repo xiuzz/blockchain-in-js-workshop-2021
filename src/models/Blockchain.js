@@ -68,7 +68,7 @@ class Blockchain {
     //快照
     this.preUtxoPool=this.utxoPool.clone()
     //更新
-    this.utxoPool.addUTXO(block.coinbaseBeneficiary)
+    this.utxoPool.addUTXO(block.coinbaseBeneficiary,12.5)
   }
 }
 
