@@ -37,7 +37,7 @@ class UTXOPool {
   // 验证交易合法性
   /**
    * 验证余额
-   * 返回 bool 
+   * 返回 bool
    */
   isValidTransaction(owner,amount) {
     return this.utxos[owner].amount>amount
