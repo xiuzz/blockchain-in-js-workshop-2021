@@ -1,7 +1,7 @@
-import { SHA256 } from "crypto-js";
+import sha256 from 'crypto-js/sha256.js'
 
 function getHash(left,right){
-    return SHA256(left+right).toString()
+    return sha256(left+right).toString()
 }
 
 class Merkle{
@@ -9,7 +9,7 @@ class Merkle{
         this.txList=[...list];
         this.tree=new Array(); //merkle 树构成的堆结构
         this.txList.sort(); 
-        temp=new Array();
+        let temp=new Array();
         while(this.txList.length>1){
             if(this.txList.length%2!=0)this.txList.push(this.txList[this.txList.length-1]);
             for(let i=this.txList.length-1;i>=0;i-=2){
@@ -20,9 +20,10 @@ class Merkle{
                 temp.unshift(getHash(left+right));
             }
             this.txList=[...temp];
-            temp.clear();
+            temp=[];
         }
         this.root=this.txList[0];//merke 树根
         this.txList=list;
     }
 }
+export default Merkle
