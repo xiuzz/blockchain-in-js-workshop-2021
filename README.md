@@ -119,18 +119,30 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/ba447064
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/836ac4e640def8cd942315bfdc070bef18a0eb8d
 
 
 ### 代码截图
 
 > 将截图上传至网盘，放入链接即可
 
-![](链接)
+![](链接)https://pan.baidu.com/s/1zsynnEKaI927bQDMRBM6ZQ?pwd=yx23
 
 
 ### 主观与讨论题内容
 
+⽐特币交易的处理极限:
+
+由实验可知，处理极限一是在于区块的产生速度，每一笔交易需要被打包进入区块，因此区块的产生速度直接影响比特币交易的处理极限，这里面包括打包的时间，打包后挖矿的时间。二是区块的规模限制，区块越大能同时处理的交易也就越多，但是由merkle树的结构可以知道交易越多，计算merkleroot的hash值时间也就越长。
+
+区块⼤⼩与⽐特币挖矿难度的关系:
+
+
+没有想到什么直接联系。区块的大小影响交易的处理速度，即吞吐量。比特币挖矿时是在计算sha256产生的固定长度hash值，区块的大小并不会影响该hash的长度。不过考虑区块产生时间需要动态平衡，区块加大会增加区块产生时间，从而调整难度值，减下区块产生时间。
+
+
+debugger:
+https://pan.baidu.com/s/14qYMJNpkBHB8WyMidOGgHg?pwd=hh2j
 
 
 ---

@@ -6,10 +6,11 @@ function getHash(left,right){
 
 class Merkle{
     constructor(list){//arr
-        this.txList=[...list];
+        this.txList=list.map((item) => sha256(item.hash));
         this.tree=new Array(); //merkle 树构成的堆结构
         this.txList.sort(); 
         let temp=new Array();
+        if(this.txList.length%2!=0)this.txList.push(this.txList[this.txList.length-1]);
         while(this.txList.length>1){
             if(this.txList.length%2!=0)this.txList.push(this.txList[this.txList.length-1]);
             for(let i=this.txList.length-1;i>=0;i-=2){
