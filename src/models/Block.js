@@ -1,5 +1,5 @@
 import sha256 from 'crypto-js/sha256.js'
-
+import Merkle from './Merkle.js'
 export const DIFFICULTY = 3
 
 class Block {  
@@ -16,9 +16,15 @@ class Block {
     //nonce 
     this.nonce='0';
     //创块者
-    this.coinbaseBeneficiary=miner
+    this.coinbaseBeneficiary=miner;
     //utxo_pool
-    this.utxoPool=null
+    this.utxoPool=null;
+    //merkleRoot hash
+    this.merkleRoot=null;
+    //区块体里面有个merkle
+    this.merkle=null;
+    //包含的账单
+    this.trxlist=new Array();
   }
   isValid() {
     let cnt=0;
@@ -34,19 +40,19 @@ class Block {
     this.nonce = nonce
   }
 
-  isValid() {}
-
-  setNonce(nonce) {}
-
   // 根据交易变化更新区块 hash
-  _setHash() {}
+  _setHash() {
+    this.hash=sha256(new Date().getTime().toString()+this.merkleRoot.toString).toString();
+  }
 
   // 汇总计算交易的 Hash 值
   /**
    * 默克尔树实现
    */
   combinedTransactionsHash() {
-
+    this.merkle=new Merkle(this.trxlist);
+    this.merkleRoot=this.merkle.root;
+    return this.merkleRoot;
   }
 
   // 添加交易到区块
@@ -54,7 +60,12 @@ class Block {
    * 
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
-  addTransaction() {}
+  addTransaction(trx) {
+    this.trxlist.push(trx);
+    this.combinedTransactionsHash();
+    this._setHash();
+    this.utxoPool.handleTransaction(trx);
+  }
 
 }
 export default Block
