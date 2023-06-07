@@ -1,6 +1,5 @@
 import sha256 from 'crypto-js/sha256.js'
 
-
 class Transaction {
   constructor(outputer,inputer,outputAmount) {
 
