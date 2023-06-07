@@ -7,7 +7,7 @@ class Transaction {
     this.outputer=outputer,
     this.inputer=inputer,
     this.outputAmount=outputAmount,
-    this.hash=sha256((this.owner+this.receiverPubKey+this.outputAmount).toString()).toString()
+    this.hash=sha256((this.outputer+this.inputer+this.outputAmount).toString()).toString()
   }
 
   // 更新交易 hash
@@ -17,7 +17,7 @@ class Transaction {
 
   // 计算交易 hash 的摘要函数
   _calculateHash() {
-    return sha256((this.owner+this.receiverPubKey+this.outputAmount).toString()).toString()
+    return sha256((this.outputer+this.inputer+this.outputAmount).toString()).toString()
   }
 }
 
