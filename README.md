@@ -155,19 +155,24 @@ https://pan.baidu.com/s/14qYMJNpkBHB8WyMidOGgHg?pwd=hh2j
 
 ### 代码 commint 地址
 
-https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/25f3a0d83a9fff2b4514c5503f470df939d0c2af
+https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/10d5f996c71fe265260690c82ab9e953730cd2fa
 
 
 ### 代码截图
 
 > 将截图上传至网盘，放入链接即可
 
-![](图片链接放这里)
-
+![](图片链接放这里)https://pan.baidu.com/s/1gTDP_ufQz66Hq7n8-KHqqw?pwd=56cd
 
 ### 主观与讨论题内容
 
+什么样的交易费⽤是合理的?
 
+更快地确认交易，交易费也就越高。 因此如果你想要更快地确认交易，可以设置更高的交易费用。如果你不介意等待，可以设置较低的交易费用。但是，如果你将交易费用设置得太低，那么交易确认的时间会非常漫长。
+
+如果去掉交易费⽤⽐特币⽹络会发⽣什么？
+
+交易可能会被矿工忽略，因为他们没有动力去验证用户交易。这意味着交易可能永远不会被确认，因此比特币可能会被永远锁定在钱包中。
 
 ---
 
