@@ -13,7 +13,8 @@
     "check:lesson2": "node src/tests/lesson2.js",
     "check:lesson3": "node src/tests/lesson3.js",
     "check:lesson4": "node src/tests/lesson4.js",
-    "check:lesson5": "node src/tests/lesson5.js"
+    "check:lesson5": "node src/tests/lesson5.js",
+    "check:lesson6": "node src/tests/lesson6.js"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.1.1"

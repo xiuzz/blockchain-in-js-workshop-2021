@@ -28,9 +28,9 @@ class UTXOPool {
   
   // 处理交易函数
   handleTransaction(trx) {
-    if(this.isValidTransaction(trx.outputer,trx.outputAmount)){
-      this.addUTXO(trx.outputer,-trx.outputAmount)
-      this.addUTXO(trx.inputer,trx.outputAmount)
+    if(this.isValidTransaction(trx)){
+      this.addUTXO(trx.outputer,-(trx.outputAmount+trx.fee));
+      this.addUTXO(trx.inputer,trx.outputAmount);
     }
   }
 
@@ -39,8 +39,8 @@ class UTXOPool {
    * 验证余额
    * 返回 bool
    */
-  isValidTransaction(owner,amount) {
-    return this.utxos[owner].amount>amount
+  isValidTransaction(trx) {
+    return this.utxos[trx.outputer].amount>=trx.outputAmount+trx.fee;
   }
 }
 

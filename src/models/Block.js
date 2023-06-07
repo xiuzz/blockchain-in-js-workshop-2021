@@ -61,10 +61,14 @@ class Block {
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
   addTransaction(trx) {
+
     this.trxlist.push(trx);
     this.combinedTransactionsHash();
     this._setHash();
-    this.utxoPool.handleTransaction(trx);
+    if(this.utxoPool.isValidTransaction(trx)){
+      this.utxoPool.addUTXO(this.coinbaseBeneficiary,trx.fee);
+      this.utxoPool.handleTransaction(trx);
+    }
   }
 
 }
