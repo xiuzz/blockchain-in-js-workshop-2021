@@ -28,7 +28,7 @@ class UTXOPool {
   
   // 处理交易函数
   handleTransaction(trx) {
-    if(this.isValidTransaction(trx)){
+    if(this.isValidTransaction(trx)&&trx.hasValidSignature()){
       this.addUTXO(trx.outputer,-(trx.outputAmount+trx.fee));
       this.addUTXO(trx.inputer,trx.outputAmount);
     }

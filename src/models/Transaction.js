@@ -1,12 +1,13 @@
 import sha256 from 'crypto-js/sha256.js'
-
+import { sign, verifySignature } from '../crypto.js'
 class Transaction {
-  constructor(outputer,inputer,outputAmount,fee) {
+  constructor(outputer,inputer,outputAmount,fee,signature) {
     this.outputer=outputer,
     this.inputer=inputer,
     this.outputAmount=outputAmount,
     this.fee=fee,
     this.hash=sha256((this.outputer+this.inputer+this.outputAmount+this.fee).toString()).toString()
+    this.signature=signature
   }
 
   // 更新交易 hash
@@ -21,7 +22,7 @@ class Transaction {
 
   // 校验交易签名 返回 bool 类型的值
   hasValidSignature() {
-
+      return verifySignature(this.hash, this.signature, this.outputer)
   }
 
 }

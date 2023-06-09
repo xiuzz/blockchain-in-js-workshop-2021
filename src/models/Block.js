@@ -61,6 +61,7 @@ class Block {
    * 需包含 UTXOPool 的更新与 hash 的更新
    */
   addTransaction(trx) {
+    if(!trx.hasValidSignature())return
     this.trxlist.push(trx);
     this.combinedTransactionsHash();
     this._setHash();
@@ -71,7 +72,7 @@ class Block {
   }
     // 添加签名校验逻辑
   isValidTransaction(transaction) {
-    
+      return transaction.hasValidSignature()
   }
 }
 export default Block
