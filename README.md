@@ -197,7 +197,7 @@ https://github.com/CUITBlockchain/blockchain-in-js-workshop-2021/commit/6640a93d
 
 ## 结课报告
 
-
-
+在lesson1里面学习了一个区块结构和链里面最基本单元，对于竞争区块，链采取什么选择策略。在lesson2里面学习了如何构建挖矿难度，如何挖矿计算hash值，怎样对结果进行校验。在lesson3里面，学习了如何处理utxo，给予矿工手续费，验证utxo是否合法。在lesson4里面学习了如何构建utxo池，基本的交易结构。
+在lesson5里面进一个实现了交易功能，为每个区块添加了存储交易属性，以及交易的hash。在lesson6里面为每一步交易添加了交易费。在lesson7里面对交易添加了签名和认证操作。
 
 
